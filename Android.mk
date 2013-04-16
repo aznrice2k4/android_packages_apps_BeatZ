@@ -15,9 +15,21 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_PACKAGE_NAME := BeatZ
 LOCAL_CERTIFICATE := platform
 
-LOCAL_OVERRIDES_PACKAGES := \
-				MusicFX \
-				DSPManager
+LOCAL_OVERRIDES_PACKAGES := MusicFX
+
+LOCAL_CFLAGS := -O3 \
+                -fomit-frame-pointer \
+                -funsafe-math-optimizations \
+                -fstrict-aliasing \
+				-funswitch-loops \
+                -Wstrict-aliasing=2 \
+                -Werror=strict-aliasing \
+                -pipe \
+				-floop-interchange \
+				-floop-strip-mine \
+				-floop-block \
+				-ffast-math \
+				-funsafe-loop-optimizations
 
 include $(BUILD_PACKAGE)
 
