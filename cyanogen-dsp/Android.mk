@@ -4,19 +4,19 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libbeatz
 
-LOCAL_CFLAGS                    := -O3 \
-                            -fomit-frame-pointer \
-                            -funsafe-math-optimizations \
-                            -fstrict-aliasing \
-							-funswitch-loops \
-                            -Wstrict-aliasing=2 \
-                            -Werror=strict-aliasing \
-                            -pipe \
-							-floop-interchange \
-							-floop-strip-mine \
-							-floop-block \
-							-ffast-math \
-							-funsafe-loop-optimizations
+LOCAL_CFLAGS := -O3 \
+                -fomit-frame-pointer \
+                -funsafe-math-optimizations \
+                -fstrict-aliasing \
+				-funswitch-loops \
+                -Wstrict-aliasing=2 \
+                -Werror=strict-aliasing \
+                -pipe \
+				-floop-interchange \
+				-floop-strip-mine \
+				-floop-block \
+				-ffast-math \
+				-funsafe-loop-optimizations
 
 LOCAL_MODULE_TAGS := optional
 
@@ -36,6 +36,7 @@ LOCAL_SRC_FILES := \
 	EffectEqualizer.cpp \
 	EffectVirtualizer.cpp \
 	FIR16.cpp \
+	Dither.cpp \
 # terminator
 
 LOCAL_C_INCLUDES += \
