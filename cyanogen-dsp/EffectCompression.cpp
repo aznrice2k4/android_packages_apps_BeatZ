@@ -196,7 +196,7 @@ int32_t EffectCompression::process(audio_buffer_t *in, audio_buffer_t *out)
          * This biases us against pumping effects and also tends to spare
          * our ears when some very loud sound begins suddenly. */
         if (volAdj > 0) {
-            volAdj >>= 4;
+            volAdj >>= 2;
         }
 
         for (uint32_t j = 0; j < in->frameCount; j ++) {
