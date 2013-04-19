@@ -64,6 +64,17 @@ int32_t Effect::configure(void* pCmdData) {
 	    ALOGE("Invalid output format (need 16-bit PCM): 0x%x", out.format);
 	}
     }
+
+    if (in.mask & EFFECT_CONFIG_FORMAT) {
+	if (in.format != AUDIO_FORMAT_PCM_24_BIT) {
+	    ALOGV("Invalid input format (need 24-bit PCM): 0x%x", in.format);
+	}
+    }
+    if (out.mask & EFFECT_CONFIG_FORMAT) {
+	if (out.format != AUDIO_FORMAT_PCM_24_BIT) {
+	    ALOGV("Invalid output format (need 24-bit PCM): 0x%x", out.format);
+	}
+    }
     if (out.mask & EFFECT_CONFIG_ACC_MODE) {
 	mAccessMode = (effect_buffer_access_e) out.accessMode;
     }
